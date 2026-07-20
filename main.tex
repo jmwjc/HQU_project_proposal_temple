@@ -19,88 +19,22 @@
 \tableofcontents
 \newpage
 
-\section{项目基本信息}
-
-\begin{table}[htbp]
-    \centering
-    \caption{项目基本信息表}
-    \begin{tabular}{>{\heiti}p{3.5cm}p{4.5cm}>{\heiti}p{3cm}p{4cm}}
-        \toprule
-        项目名称 & \multicolumn{3}{l}{基于深度学习的校园智能安防系统研究与实现} \\
-        \midrule
-        项目编号 & 2026HQU-XXXX & 项目类型 & 创新训练项目 \\
-        \midrule
-        申请人 & 张三 & 学号 & 2026XXXXXX \\
-        \midrule
-        所在学院 & 计算机科学与技术学院 & 专业 & 计算机科学与技术 \\
-        \midrule
-        指导教师 & 李四 & 职称 & 教授 \\
-        \midrule
-        联系电话 & 138-xxxx-xxxx & 申请日期 & 2026 年 7 月 \\
-        \bottomrule
-    \end{tabular}
-\end{table}
-
-\section{项目简介}
-
-\subsection{研究背景}
-校园安全是高校管理工作的重中之重。随着高校规模的不断扩大，传统的人工巡逻和监控回放方式已难以满足实时预警、快速响应的需求。本项目拟结合深度学习技术，构建一套面向校园场景的智能安防系统，实现人员异常行为识别、重点区域入侵检测、人群密度估计等功能，提升校园安全管理水平。
-
-\subsection{研究目的与意义}
-\begin{enumerate}[label=(\arabic*)]
-    \item \textbf{理论意义：}探索轻量级深度学习模型在边缘计算设备上的部署方法，丰富智能视频监控领域的研究。
-    \item \textbf{应用价值：}为学校保卫部门提供实时、准确的预警信息，降低安全事故发生概率。
-    \item \textbf{育人功能：}通过项目实践，培养学生的工程能力、创新意识和团队协作精神。
-\end{enumerate}
-
-\section{立项依据}
-
-\subsection{国内外研究现状}
-近年来，基于卷积神经网络（CNN）和 Transformer 的目标检测与行为识别算法发展迅速。YOLO 系列、Faster R-CNN 等模型在公开数据集上取得了优异性能；同时，基于视频理解的 SlowFast、TimeSformer 等网络在行为识别任务中表现突出。然而，这些模型在计算资源受限的校园监控设备上部署时仍面临实时性差、误报率高等问题。
-
-\subsection{项目可行性分析}
-\begin{itemize}[leftmargin=2em]
-    \item \textbf{技术可行性：}团队具备 Python、PyTorch 和 OpenCV 开发经验，可完成模型训练与部署。
-    \item \textbf{数据可行性：}可与学校保卫处合作，获取脱敏后的校园监控视频数据。
-    \item \textbf{硬件可行性：}实验室配备高性能 GPU 服务器和 NVIDIA Jetson 边缘计算设备。
-\end{itemize}
-
-\section{研究方案}
-
-\subsection{研究内容}
-\begin{enumerate}[label=\arabic*., leftmargin=2em]
-    \item 构建校园安防数据集，包括异常行为、非法入侵、人群聚集等类别。
-    \item 设计并训练面向校园场景的轻量化检测模型。
-    \item 开发实时视频分析平台，支持多路摄像头接入与告警推送。
-    \item 在典型场景（校门、图书馆、宿舍区）开展系统测试与优化。
-\end{enumerate}
-
-\subsection{技术路线}
-本项目的技术路线如图~\ref{fig:tech-route} 所示。首先对校园监控视频进行采集与预处理；其次基于 YOLOv8 与 LSTM 构建检测-跟踪-行为识别一体化模型；最后通过 Flask 后端与 Vue 前端实现可视化监控平台。
-
-\begin{figure}[htbp]
-    \centering
-    \fbox{\parbox{0.8\textwidth}{\centering \vspace{2cm} 技术路线图（请替换为实际图片）\vspace{2cm}}}
-    \caption{项目技术路线}
-    \label{fig:tech-route}
-\end{figure}
-
-\subsection{研究方法}
-本项目采用文献调研、实验验证、对比分析与工程实现相结合的研究方法。通过消融实验验证各模块有效性，并采用准确率（Accuracy）、精确率（Precision）、召回率（Recall）和实时帧率（FPS）作为评价指标。
-
+\input{requirement.tex}
+\input{background.tex}
+\input{scheme.tex}
 \section{项目进度安排}
 
 \begin{table}[htbp]
     \centering
-    \caption{项目进度安排表}
+    % \caption{项目进度安排表}
     \begin{tabular}{clp{8cm}}
         \toprule
         \textbf{序号} & \textbf{时间节点} & \textbf{主要工作内容} \\
         \midrule
-        1 & 2026.09--2026.10 & 文献调研、需求分析、数据集采集 \\
-        2 & 2026.11--2026.12 & 模型设计、训练与调优 \\
-        3 & 2027.01--2027.03 & 平台开发与典型场景部署 \\
-        4 & 2027.04--2027.05 & 系统测试、性能优化与结题验收 \\
+        1 & 2026.09--2026.10 & 文献调研、需求分析、理论列式与单元选型 \\
+        2 & 2026.11--2026.12 & 免自锁杆/梁单元开发、静力与动力分析框架搭建 \\
+        3 & 2027.01--2027.03 & 稳定分析模块、规范校核接口及 BM 软件集成 \\
+        4 & 2027.04--2027.05 & 算例验证、工程应用测试、报告撰写与结题验收 \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -108,8 +42,9 @@
 \section{预期成果}
 
 \begin{enumerate}[label=(\arabic*)]
-    \item 完成一套校园智能安防原型系统，支持至少 4 路摄像头实时分析。
-    \item 形成 1 份完整的技术报告和用户使用手册。
+    \item 完成一套面向冷弯薄壁型钢结构框架（杆/梁）有限元分析模块原型，支持静力、动力与稳定分析。
+    \item 建立面向 GB 50018、AISI S100、EC3 等规范的校核接口方案，形成可扩展的规范验算数据流。
+    \item 形成 1 份完整的技术报告、用户使用手册及算例验证报告。
     \item 发表或投稿相关学术论文 1 篇（中文核心或 EI/CPCI 会议）。
     \item 申请软件著作权 1 项。
 \end{enumerate}
@@ -118,15 +53,15 @@
 
 \begin{table}[htbp]
     \centering
-    \caption{项目经费预算表}
+    % \caption{项目经费预算表}
     \begin{tabular}{clcr}
         \toprule
         \textbf{序号} & \textbf{支出科目} & \textbf{金额（元）} & \textbf{计算依据} \\
         \midrule
-        1 & 设备费 & 3,000 & 边缘计算设备、存储硬盘等 \\
-        2 & 材料费 & 1,000 & 实验耗材、办公用品等 \\
-        3 & 测试化验加工费 & 500 & 模型训练云服务资源 \\
-        4 & 差旅费 & 1,000 & 参加学术会议、调研交通 \\
+        1 & 设备费 & 3,000 & 高性能计算服务器配件、存储设备等 \\
+        2 & 材料费 & 1,000 & 办公耗材、资料打印、书籍资料等 \\
+        3 & 测试化验加工费 & 500 & 云服务器算力、商业软件临时授权等 \\
+        4 & 差旅费 & 1,000 & 参加学术会议、企业调研交通 \\
         5 & 版面/知识产权费 & 1,500 & 论文版面费、软著申请费 \\
         \midrule
         \multicolumn{2}{c}{\textbf{合计}} & \textbf{7,000} & \\
@@ -138,15 +73,17 @@
 
 \begin{table}[htbp]
     \centering
-    \caption{项目团队信息表}
-    \begin{tabular}{clllp{4cm}}
+    % \caption{项目团队信息表}
+    \begin{tabular}{cllp{5cm}}
         \toprule
-        \textbf{序号} & \textbf{姓名} & \textbf{学号} & \textbf{学院/专业} & \textbf{项目分工} \\
+        \textbf{序号} & \textbf{姓名} & \textbf{职称/学历} & \textbf{项目分工} \\
         \midrule
-        1 & 张三 & 2026XXXXXX & 计算机学院/计科 & 项目负责人、算法设计 \\
-        2 & 王五 & 2026XXXXXX & 计算机学院/计科 & 后端开发 \\
-        3 & 赵六 & 2026XXXXXX & 计算机学院/软件 & 前端与可视化 \\
-        4 & 孙七 & 2026XXXXXX & 计算机学院/人工智能 & 数据标注与测试 \\
+        1 & 吴俊超 & 副教授 & 项目负责人、框架结构分析 \\
+        2 & 杨竞杰 & 副教授 & 冷弯型钢构件力学分析 \\
+        3 & 李海锋 & 教授 & 项目钢结构分析指导 \\
+        4 & 林益铭 & 研究生 & 理论模型校核与程序测试\\
+        5 & 欧阳源枝 & 本科生 & 程序测试 \\
+        6 & 梁佳鹏 & 本科生 & 程序测试 \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -154,9 +91,11 @@
 \section{参考文献}
 
 \begin{enumerate}[label={[\arabic*]}, leftmargin=2em]
-    \item Redmon J, Divvala S, Girshick R, et al. You only look once: Unified, real-time object detection[C]. CVPR, 2016: 779-788.
-    \item Feichtenhofer C, Fan H, Malik J, et al. SlowFast networks for video recognition[C]. ICCV, 2019: 6202-6211.
-    \item 刘明, 王强. 基于深度学习的视频监控异常行为检测综述[J]. 计算机学报, 2023, 46(5): 1123-1145.
+    \item 中华人民共和国住房和城乡建设部. 冷弯薄壁型钢结构技术标准: GB 50018-2002[S]. 北京: 中国计划出版社, 2002.
+    \item American Iron and Steel Institute. North American Specification for the Design of Cold-Formed Steel Structural Members: AISI S100-2016[S]. Washington, D.C.: AISI, 2016.
+    \item Schafer B W. Review: Direct strength method of cold-formed steel member design[J]. Journal of Constructional Steel Research, 2008, 64(7-8): 766-778.
+    \item Bathe K J. Finite element procedures[M]. Upper Saddle River: Prentice Hall, 1996.
+    \item Belytschko T, Liu W K, Moran B, et al. Nonlinear finite elements for continua and structures[M]. Chichester: John Wiley \& Sons, 2013.
 \end{enumerate}
 
 \end{document}
